@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Notes - NoteFlow</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body class="dashboard-page">
+
+    <div class="background-shapes">
+
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+
+    </div>
+
+    <header class="navbar">
+
+        <div class="nav-logo">
+            📝 NoteFlow
+        </div>
+
+        <div class="nav-right">
+
+            <span>
+                Hello, <strong id="username"></strong> 👋
+            </span>
+
+            <button id="logoutBtn" class="logout-btn">
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main class="dashboard">
+
+        <section class="welcome-section">
+
+            <div>
+
+                <h1>
+                    My Notes
+                </h1>
+
+                <p>
+                    Organize your thoughts and ideas in one beautiful place.
+                </p>
+
+            </div>
+
+            <button id="newNoteBtn" class="add-btn">
+                + New Note
+            </button>
+
+        </section>
+
+
+        <section class="note-editor" id="noteEditor">
+
+            <div class="editor-header">
+
+                <h2 id="editorTitle">
+                    Create New Note
+                </h2>
+
+                <button id="closeEditorBtn"
+                        class="close-btn">
+                    ×
+                </button>
+
+            </div>
+
+            <form id="noteForm">
+
+                <input
+                    type="hidden"
+                    id="noteId"
+                >
+
+                <input
+                    type="text"
+                    id="noteTitle"
+                    placeholder="Note title..."
+                    required
+                >
+
+                <textarea
+                    id="noteContent"
+                    placeholder="Write your note here..."
+                    rows="8"
+                    required
+                ></textarea>
+
+                <div class="editor-buttons">
+
+                    <button
+                        type="button"
+                        id="cancelBtn"
+                        class="cancel-btn">
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="save-btn">
+                        Save Note
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <div id="message"></div>
+
+
+        <section
+            id="notesContainer"
+            class="notes-grid">
+        </section>
+
+
+        <div
+            id="emptyState"
+            class="empty-state">
+
+            <div class="empty-icon">
+                🗒️
+            </div>
+
+            <h2>No Notes Yet</h2>
+
+            <p>
+                Create your first note and start capturing your ideas.
+            </p>
+
+            <button
+                id="emptyAddBtn"
+                class="add-btn">
+                Create Your First Note
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <script src="{{ url_for('static', filename='js/notes.js') }}"></script>
+
+</body>
+</html>
